@@ -32,10 +32,13 @@ git clone https://github.com/Abnernp/SPS-Test.git
 - No terminal terminal:
 - cd test-sps-server
 - npm install dotenv
-- node server.js 
-
-- Em um segundo terminal:
+- node server.js
+- cd ..
 - cd test-sps-client
 - npm install
-- npm run dev
+- cd ..
+- npm install concurrently --save-dev
+
+### Rodar o Projeto
+- npm start
 
