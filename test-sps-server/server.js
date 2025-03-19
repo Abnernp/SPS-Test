@@ -34,7 +34,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 5001;
 const SECRET_KEY = process.env.SECRET_KEY || "secret_key";
-console.log(SECRET_KEY);
+// console.log(SECRET_KEY);
 
 const usersFilePath = path.join(__dirname, "data", "users.json");
 
@@ -112,5 +112,5 @@ app.put("/users/:email", authenticateToken, (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT}`);
+  // console.log(`Servidor rodando na porta ${PORT}`);
 });
