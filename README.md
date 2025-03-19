@@ -22,12 +22,23 @@ Este projeto é uma API backend simples construída com **Node.js** e **Express*
 
 ## Configuração do Ambiente
 
-### 1. Instalar Dependências
+### Instalar Dependências
 
 Clone o repositório e instale as dependências do projeto:
 
 
 git clone https://github.com/Abnernp/SPS-Test.git
-- cd SPS-Test
-- npm install
+
+- **No terminal terminal executar os seguintes comandos**:
+  - cd test-sps-server
+  - npm install dotenv
+  - node server.js
+  - cd ..
+  - cd test-sps-client
+  - npm install
+  - cd ..
+  - npm install concurrently --save-dev
+
+### Rodar o Projeto
 - npm start
+
