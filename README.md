@@ -22,7 +22,7 @@ Este projeto é uma API backend simples construída com **Node.js** e **Express*
 
 ## Configuração do Ambiente
 
-### 1. Instalar Dependências
+### Instalar Dependências
 
 Clone o repositório e instale as dependências do projeto:
 
