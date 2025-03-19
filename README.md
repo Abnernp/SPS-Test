@@ -28,7 +28,8 @@ Clone o repositório e instale as dependências do projeto:
 
 
 git clone https://github.com/Abnernp/SPS-Test.git
-- assegurar de estar SPS-Test ou utilize o comando cd SPS-Test
+- assegurar de estar SPS-Test ou utilize o comando:
+  -  cd SPS-Test
 
 - **No terminal terminal executar os seguintes comandos**:
   - cd test-sps-server
