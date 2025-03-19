@@ -1,3 +1,10 @@
+/**
+ * Função para realizar o login do usuário.
+ * 
+ * Esta função recebe o email e a senha fornecidos pelo usuário, tenta autenticar as credenciaischamando a API de login e, 
+ caso as credenciais sejam válidas, armazena o token retornado no localStorage e no estado de autenticação do aplicativo.
+ */
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';

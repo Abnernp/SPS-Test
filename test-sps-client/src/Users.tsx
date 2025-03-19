@@ -1,3 +1,14 @@
+/**
+ * Função para exibir e gerenciar usuários.
+ * 
+ * Esta função permite visualizar a lista de usuários cadastrados, adicionar novos usuários, editar dados de usuários existentes e excluir usuários.
+ * 
+ * O processo de criação e edição de usuários verifica se o e-mail já está cadastrado e exige a senha atual para atualização. 
+ * Ao excluir, a confirmação é solicitada ao usuário.
+ * 
+ * A aplicação utiliza axios para fazer as requisições à API e toast para exibir mensagens de sucesso ou erro.
+ */
+
 import React, { useState, useEffect, FormEvent, useRef } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -20,10 +31,10 @@ const Users: React.FC<UsersProps> = ({ token }) => {
   const [email, setEmail] = useState<string>("");
   const [type, setType] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [currentPassword, setCurrentPassword] = useState<string>(""); // Novo campo para a senha atual
+  const [currentPassword, setCurrentPassword] = useState<string>(""); 
   const [tab, setTab] = useState<"list" | "add" | "edit">("list");
   const [editingUser, setEditingUser] = useState<User | null>(null);
-  const [userToDelete, setUserToDelete] = useState<User | null>(null); // Novo estado para armazenar o usuário a ser excluído
+  const [userToDelete, setUserToDelete] = useState<User | null>(null); 
   const formRef = useRef<HTMLDivElement>(null);
 
   const fetchUsers = async () => {
@@ -73,7 +84,7 @@ const Users: React.FC<UsersProps> = ({ token }) => {
     e.preventDefault();
     if (!editingUser) return;
 
-    // Verificar a senha atual antes de permitir a atualização
+    
     if (currentPassword !== editingUser.password) {
       toast.error("A senha atual está incorreta!");
       return;
@@ -101,7 +112,7 @@ const Users: React.FC<UsersProps> = ({ token }) => {
           headers: { Authorization: `Bearer ${token}` },
         });
         toast.success("Usuário excluído com sucesso!");
-        setUserToDelete(null); // Limpar o estado após excluir
+        setUserToDelete(null); 
         fetchUsers();
       } catch (err) {
         console.error("Erro ao excluir usuário:", err);
@@ -116,7 +127,7 @@ const Users: React.FC<UsersProps> = ({ token }) => {
     setEmail(user.email);
     setType(user.type);
     setPassword("");
-    setCurrentPassword(""); // Limpar a senha atual ao editar
+    setCurrentPassword(""); 
     setTab("edit");
   };
 
@@ -126,16 +137,16 @@ const Users: React.FC<UsersProps> = ({ token }) => {
     setEmail("");
     setType("");
     setPassword("");
-    setCurrentPassword(""); // Limpar a senha atual ao fechar
+    setCurrentPassword("");
     setEditingUser(null);
   };
 
   const openDeleteDialog = (user: User) => {
-    setUserToDelete(user); // Armazena o usuário que será excluído
+    setUserToDelete(user);
   };
 
   const closeDeleteDialog = () => {
-    setUserToDelete(null); // Limpa o estado ao fechar o diálogo
+    setUserToDelete(null); 
   };
 
   useEffect(() => {
@@ -184,7 +195,7 @@ const Users: React.FC<UsersProps> = ({ token }) => {
                   Editar
                 </button>
                 <button
-                  onClick={() => openDeleteDialog(user)} // Abre a caixa de diálogo
+                  onClick={() => openDeleteDialog(user)} 
                   className="bg-red-700 rounded-lg text-white px-3 py-1 hover:bg-red-500"
                 >
                   Excluir
@@ -194,7 +205,6 @@ const Users: React.FC<UsersProps> = ({ token }) => {
           ))}
         </ul>
 
-        {/* Caixa de Diálogo de Exclusão */}
         {userToDelete && (
           <div className="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-gray-500 bg-opacity-50">
             <div className="bg-white p-4 rounded-lg shadow-xl">

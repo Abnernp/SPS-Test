@@ -1,3 +1,15 @@
+/**
+* Função para gerenciar autenticação e manipulação de usuários no servidor.
+*
+* Esta função configura o servidor Express para realizar as operações de login, cadastro, atualização e remoção de usuários.
+* 
+* Além disso, utiliza JWT para autenticação, validando os tokens enviados nas requisições para acessar as rotas protegidas.
+* 
+* O servidor também lê e grava os dados dos usuários em um arquivo JSON para persistência.
+* 
+* O servidor também implementa CORS para permitir a comunicação com o frontend, além de gerenciar erros de autenticação e credenciais. 
+*/
+
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
