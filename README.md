@@ -28,6 +28,14 @@ Clone o repositório e instale as dependências do projeto:
 
 
 git clone https://github.com/Abnernp/SPS-Test.git
-- cd SPS-Test
+
+- No terminal terminal:
+- cd test-sps-server
+- npm install dotenv
+- node server.js 
+
+- Em um segundo terminal:
+- cd test-sps-client
 - npm install
-- npm start
+- npm run dev
+
