@@ -262,7 +262,7 @@ const Users: React.FC<UsersProps> = ({ token }) => {
                   type="password"
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
-                  placeholder="Senha Atual"
+                  placeholder="Senha Atual (necessária para qualquer alteração)"
                   className="border p-2 rounded shadow-md"
                 />
               )}
