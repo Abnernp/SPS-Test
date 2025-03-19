@@ -28,6 +28,6 @@ Clone o repositório e instale as dependências do projeto:
 
 
 git clone https://github.com/Abnernp/SPS-Test.git
--cd SPS-Test
+- cd SPS-Test
 - npm install
 - npm start
